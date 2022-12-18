@@ -1,0 +1,8 @@
+logging:
+  level:
+    root: INFO
+
+ecowatt-api:
+  base-url: "https://digital.iservices.rte-france.com"
+  encoded-credentials: ${ECOWATT_API_ENCODED_CREDENTIALS:}
+  sandbox-mode: ${ECOWATT_API_SANDBOX_MODE:true}
