@@ -1,4 +1,4 @@
-# Ecowatt Data Services (WIP)
+# Ecowatt Dataflow (WIP)
 
 Contains Spring Cloud tasks compiled in native mode with GraalVM, following a DDD code architecture.
 These tasks are used to back up Ecowatt data api to Firestore database and send daily reports
