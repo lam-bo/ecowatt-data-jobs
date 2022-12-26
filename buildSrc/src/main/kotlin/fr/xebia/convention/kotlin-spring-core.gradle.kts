@@ -5,5 +5,6 @@ plugins {
     `java-library`
 }
 
-dependencies {
-}
+tasks.stream()
+    .filter { it.name.startsWith("boot")}
+    .forEach{ it.enabled = false }
