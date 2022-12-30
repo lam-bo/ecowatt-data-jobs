@@ -1,0 +1,26 @@
+{
+	"hostRequirements": {
+		"cpus": 4,
+		"memory": "8gb",
+		"storage": "32gb"
+	},
+	"name": "ecowatt-dataflow-devcontainer",
+	"features": {
+		"ghcr.io/ebaskoro/devcontainer-features/sdkman:1": {
+			"candidate": "java",
+			"version": "22.3.r17-grl"
+		}
+	},
+	"onCreateCommand": "gu install native-image",
+	"extensions": [
+		"mathiasfrohlich.kotlin",
+		"github.codespaces",
+		"vscjava.vscode-gradle",
+		"vscjava.vscode-java-debug",
+		"vscjava.vscode-java-pack",
+		"googlecloudtools.cloudcode",
+		"fwcd.kotlin",
+		"oracle-labs-graalvm.graalvm",
+		"oracle-labs-graalvm.graalvm-pack"
+	]
+}

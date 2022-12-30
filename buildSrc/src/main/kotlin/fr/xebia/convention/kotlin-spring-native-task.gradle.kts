@@ -33,12 +33,15 @@ val registryPassword = project.properties.get("registry.password") as String?
 val fullImageName = listOf(registryBaseUrl, registryImagePath, project.name)
     .filterNotNull()
     .joinToString("/")
-var additionalTags = mutableListOf<String>()
+lateinit var additionalTags : List<String>
 gitVersioning.apply {
     refs {
         branch("main") {
-            additionalTags.add(fullImageName.plus(":main"))
+            additionalTags = listOf(fullImageName.plus(":main"))
         }
+    }
+    rev {
+        additionalTags = emptyList()
     }
 }
 

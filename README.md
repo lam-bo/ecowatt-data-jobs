@@ -6,4 +6,4 @@ These tasks are used to back up Ecowatt data api to Firestore database and send 
 ## Quickstart
 
 See [QUICKSTART.md](QUICKSTART.md) to launch a simple task to log Ecowatt signals on your local
-workstation
+workstation or on Github codespaces

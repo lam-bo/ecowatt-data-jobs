@@ -9,6 +9,10 @@ sdk default java 22.3.r17-grl
 gu install native-image
 ```
 
+Alternatively you can also directly open a Github codespace to code online 
+
+https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/setting-up-your-project-for-codespaces#step-1:-open-your-project-in-a-codespace
+
 ## Ecowatt requirements
 
 In the module core, create an `application-dev.yml` file in `resources/` with the following
