@@ -1,3 +1,3 @@
 plugins {
-    id("fr.xebia.convention.kotlin-spring-core")
+    id("com.lamboapps.convention.kotlin-spring-core")
 }

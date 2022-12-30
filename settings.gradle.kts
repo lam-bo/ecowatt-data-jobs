@@ -16,6 +16,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ecowatt-dataflow"
+rootProject.name = "ecowatt-data-jobs"
 include(":core")
 include(":log-ecowatt-signals-task")

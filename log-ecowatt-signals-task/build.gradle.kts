@@ -1,3 +1,3 @@
 plugins {
-    id("fr.xebia.convention.kotlin-spring-native-task")
+    id("com.lamboapps.convention.kotlin-spring-native-task")
 }

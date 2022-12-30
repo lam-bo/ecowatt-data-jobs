@@ -1,10 +1,10 @@
 {
+	"name": "ecowatt-data-jobs-devcontainer",
 	"hostRequirements": {
 		"cpus": 4,
 		"memory": "8gb",
 		"storage": "32gb"
 	},
-	"name": "ecowatt-dataflow-devcontainer",
 	"features": {
 		"ghcr.io/ebaskoro/devcontainer-features/sdkman:1": {
 			"candidate": "java",

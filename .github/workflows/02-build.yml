@@ -7,10 +7,10 @@ on:
     branches:
       - main
 env:
-  DATAFLOW_GITHUB_IDENTITY_PROVIDER: "projects/174686046131/locations/global/workloadIdentityPools/dataflow-github-actions-pool/providers/dataflow-github-actions-provider"
-  DATAFLOW_GITHUB_SERVICE_ACCOUNT: "dataflow-github-actions-user@ecowatt-data.iam.gserviceaccount.com"
-  DATAFLOW_REGISTRY_BASE_URL: "europe-west9-docker.pkg.dev"
-  DATAFLOW_REGISTRY_IMAGE_PATH: "ecowatt-data/dataflow"
+  DATA_JOBS_GITHUB_IDENTITY_PROVIDER: "projects/997192138939/locations/global/workloadIdentityPools/data-jobs-ghub-actions-pool/providers/data-jobs-ghub-actions-provider"
+  DATA_JOBS_GITHUB_SERVICE_ACCOUNT: "data-jobs-ghub-actions-user@ecowatt-data-v2.iam.gserviceaccount.com"
+  DATA_JOBS_REGISTRY_BASE_URL: "us-central1-docker.pkg.dev"
+  DATA_JOBS_REGISTRY_IMAGE_PATH: "ecowatt-data-v2/data-jobs"
 
 jobs:
   build-and-push:
@@ -27,8 +27,8 @@ jobs:
         uses: google-github-actions/auth@v1
         with:
           token_format: "access_token"
-          workload_identity_provider: ${{ env.DATAFLOW_GITHUB_IDENTITY_PROVIDER }}
-          service_account: ${{ env.DATAFLOW_GITHUB_SERVICE_ACCOUNT }}
+          workload_identity_provider: ${{ env.DATA_JOBS_GITHUB_IDENTITY_PROVIDER }}
+          service_account: ${{ env.DATA_JOBS_GITHUB_SERVICE_ACCOUNT }}
 
       - name: Setup GraalVM
         uses: graalvm/setup-graalvm@v1
@@ -43,7 +43,7 @@ jobs:
         run: |
           ./gradlew clean bootBuildImage \
           -Pregistry.isPublish=true \
-          -Pregistry.baseUrl=${{ env.DATAFLOW_REGISTRY_BASE_URL }} \
-          -Pregistry.imagePath=${{ env.DATAFLOW_REGISTRY_IMAGE_PATH }} \
+          -Pregistry.baseUrl=${{ env.DATA_JOBS_REGISTRY_BASE_URL }} \
+          -Pregistry.imagePath=${{ env.DATA_JOBS_REGISTRY_IMAGE_PATH }} \
           -Pregistry.username=oauth2accesstoken \
           -Pregistry.password=${{ steps.auth.outputs.access_token }}
