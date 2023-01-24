@@ -6,3 +6,11 @@ ecowatt-api:
   base-url: "https://digital.iservices.rte-france.com"
   encoded-credentials: ${ECOWATT_API_ENCODED_CREDENTIALS:}
   sandbox-mode: ${ECOWATT_API_SANDBOX_MODE:true}
+
+sendgrid-api:
+  key: ${SENDGRID_API_KEY:}
+  from-email: ${SENDGRID_API_FROM_EMAIL:}
+
+send-ecowatt-email-task:
+  mail-contents-profile: ${EMAIL_TASK_MAILING_PROFILE:}
+  mailing-list: ${EMAIL_TASK_MAILING_LIST:}

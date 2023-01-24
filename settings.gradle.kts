@@ -19,3 +19,4 @@ dependencyResolutionManagement {
 rootProject.name = "ecowatt-data-jobs"
 include(":core")
 include(":log-ecowatt-signals-task")
+include(":send-ecowatt-email-task")
