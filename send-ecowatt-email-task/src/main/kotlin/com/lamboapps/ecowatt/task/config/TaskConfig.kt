@@ -1,9 +1,9 @@
 package com.lamboapps.ecowatt.task.config
 
 import com.lamboapps.ecowatt.domain.spi.EcowattServiceSpi
-import com.lamboapps.ecowatt.domain.spi.SendgridServiceSpi
+import com.lamboapps.ecowatt.domain.spi.MailmodoServiceSpi
 import com.lamboapps.ecowatt.driven.ecowatt.api.config.EcowattApiConfig
-import com.lamboapps.ecowatt.driven.sendgrid.api.config.SendgridApiConfig
+import com.lamboapps.ecowatt.driven.mailmodo.api.config.MailmodoApiConfig
 import com.lamboapps.ecowatt.task.runner.SendEcowattMailRunner
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.context.properties.EnableConfigurationProperties
@@ -15,15 +15,15 @@ import org.springframework.context.annotation.Import
 @Configuration
 @EnableTask
 @EnableConfigurationProperties(TaskProperties::class)
-@Import(value = [EcowattApiConfig::class, SendgridApiConfig::class])
+@Import(value = [EcowattApiConfig::class, MailmodoApiConfig::class])
 class TaskConfig {
 
     @Bean
     fun commandLineRunner(
         ecowattServiceSpi: EcowattServiceSpi,
-        sendgridServiceSpi: SendgridServiceSpi,
+        mailmodoServiceSpi: MailmodoServiceSpi,
         taskProperties: TaskProperties
     ): CommandLineRunner {
-        return SendEcowattMailRunner(ecowattServiceSpi, sendgridServiceSpi, taskProperties)
+        return SendEcowattMailRunner(ecowattServiceSpi, mailmodoServiceSpi, taskProperties)
     }
 }
