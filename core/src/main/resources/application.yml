@@ -10,10 +10,11 @@ ecowatt-api:
   encoded-credentials: ${ECOWATT_API_ENCODED_CREDENTIALS:}
   sandbox-mode: ${ECOWATT_API_SANDBOX_MODE:true}
 
-mailmodo-api:
-  base-url: "https://api.mailmodo.com"
-  key: ${MAILMODO_API_KEY:}
-  green-signal-campaign-id: ${MAILMODO_API_GREEN_SIGNAL_CAMPAIGN_ID:}
+email-api:
+  email-sender: ${EMAIL_API_SENDER_EMAIL:}
+  email-password: ${EMAIL_API_SENDER_PASSWORD:}
+  email-host: "smtp.gmail.com"
+  email-port: 587
 
 send-ecowatt-email-task:
   target-email: ${EMAIL_TASK_TARGET_EMAIL:}
