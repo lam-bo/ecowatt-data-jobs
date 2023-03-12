@@ -1,7 +1,7 @@
 package com.lamboapps.ecowatt.task.runner
 
 import com.lamboapps.ecowatt.domain.spi.EcowattServiceSpi
-import com.lamboapps.ecowatt.domain.spi.MailmodoServiceSpi
+import com.lamboapps.ecowatt.domain.spi.EmailServiceSpi
 import com.lamboapps.ecowatt.task.config.TaskProperties
 import com.lamboapps.ecowatt.util.logger
 import org.springframework.boot.CommandLineRunner
@@ -9,7 +9,7 @@ import org.springframework.boot.CommandLineRunner
 
 class SendEcowattMailRunner(
     private val ecowattServiceSpi: EcowattServiceSpi,
-    private val mailmodoServiceSpi: MailmodoServiceSpi,
+    private val emailServiceSpi: EmailServiceSpi,
     private val taskProperties: TaskProperties
 ) : CommandLineRunner {
 
@@ -19,7 +19,7 @@ class SendEcowattMailRunner(
         val accessToken = ecowattServiceSpi.getAccessToken()
         val signals = ecowattServiceSpi.getSignals(accessToken)
         log.info(signals.toString())
-        val responseStatus = mailmodoServiceSpi.statusCodeFromGreenSignalTrigger(taskProperties.targetEmail)
+        val responseStatus = emailServiceSpi.statusCodeFromGreenSignalTrigger(taskProperties.targetEmail)
         log.info("Email sent to ${taskProperties.targetEmail} with status code $responseStatus")
     }
 }
