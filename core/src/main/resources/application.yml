@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 logging:
   level:
     root: INFO
@@ -6,3 +9,11 @@ ecowatt-api:
   base-url: "https://digital.iservices.rte-france.com"
   encoded-credentials: ${ECOWATT_API_ENCODED_CREDENTIALS:}
   sandbox-mode: ${ECOWATT_API_SANDBOX_MODE:true}
+
+mailmodo-api:
+  base-url: "https://api.mailmodo.com"
+  key: ${MAILMODO_API_KEY:}
+  green-signal-campaign-id: ${MAILMODO_API_GREEN_SIGNAL_CAMPAIGN_ID:}
+
+send-ecowatt-email-task:
+  target-email: ${EMAIL_TASK_TARGET_EMAIL:}
